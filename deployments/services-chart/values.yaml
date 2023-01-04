@@ -2,7 +2,7 @@ bonus:
   service:
     port: 8050
     image:
-      name: maxkozlov/rsoi-bonus-service
+      name: drstarland/bonus-service
       version: "1.0"
     database:
       name: privileges
@@ -13,7 +13,7 @@ flight:
   service:
     port: 8060
     image:
-      name: maxkozlov/rsoi-flight-service
+      name: drstarland/flight-service
       version: "1.0"
     database: 
       name: flights
@@ -24,7 +24,7 @@ ticket:
   service:
     port: 8070
     image:
-      name: maxkozlov/rsoi-ticket-service
+      name: drstarland/ticket-service
       version: "1.0"
     database: 
       name: tickets
@@ -35,7 +35,7 @@ gateway:
   service:
     port: 8080
     image:
-      name: maxkozlov/rsoi-api-gateway
+      name: drstarland/gateway-service
       version: "1.0"
     # enviroments:
     #  FlightsService__Host: "http://flight-service:8060"

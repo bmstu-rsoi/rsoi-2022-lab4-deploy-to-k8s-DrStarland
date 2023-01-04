@@ -39,7 +39,7 @@ jobs:
           echo kubectl get pods
           kubectl get pods
           cd deployments && helm upgrade services ./services-chart
-          sleep 15
+          sleep 30
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
