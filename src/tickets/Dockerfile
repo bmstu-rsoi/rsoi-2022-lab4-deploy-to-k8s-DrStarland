@@ -8,5 +8,5 @@ FROM alpine:latest
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
 COPY --from=0 /pain/app ./
-EXPOSE 8080
+EXPOSE 8070
 CMD ["./app"]
