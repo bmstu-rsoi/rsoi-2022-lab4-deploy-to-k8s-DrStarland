@@ -28,7 +28,7 @@ ticket:
   service:
     port: 8070
     image:
-      name: drstarland/testum_ticket
+      name: drstarland/testum_tickets
       version: "1.0"
     database: 
       name: tickets

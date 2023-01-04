@@ -58,6 +58,8 @@ func main() {
 	ServerAddress := os.Getenv("PORT")
 	if ServerAddress == "" || ServerAddress == ":80" {
 		ServerAddress = ":8080"
+	} else {
+		ServerAddress = ":" + ServerAddress
 	}
 
 	logger.Infow("starting server",
