@@ -4,7 +4,7 @@
 	"values": [
 		{
 			"key": "baseUrl",
-			"value": "https://146.148.56.200",
+			"value": "https://load-balancer-drstarland.cloud.okteto.net",
 			"enabled": true
 		}
 	],
