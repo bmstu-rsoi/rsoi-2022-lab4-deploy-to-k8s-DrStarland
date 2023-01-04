@@ -18,3 +18,7 @@ dependencies:
   - name: service-chart
     version: 1.0.0
     alias: gateway 
+
+  - name: service-chart
+    version: 1.0.0
+    alias: postgres

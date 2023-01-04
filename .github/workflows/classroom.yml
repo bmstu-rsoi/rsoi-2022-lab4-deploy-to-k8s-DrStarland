@@ -35,6 +35,8 @@ jobs:
           docker push drstarland/testum_tickets:1.0
           docker push drstarland/testum_bonus:1.0
           docker push drstarland/testum_flights:1.0
+          docker commit testum_postgres drstarland/testum_postgres:1.0
+          docker push drstarland/testum_postgres:1.0
       
       - name: Deploy
         run: |

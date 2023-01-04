@@ -4,8 +4,6 @@ bonus:
     image:
       name: drstarland/testum_bonus
       version: "1.0"
-    imagePullSecrets:
-      name: regcred
     database:
       name: privileges
       username: program
@@ -17,8 +15,6 @@ flight:
     image:
       name: drstarland/testum_flights
       version: "1.0"
-    imagePullSecrets:
-      name: regcred
     database: 
       name: flights
       username: program
@@ -41,6 +37,19 @@ gateway:
     image:
       name: drstarland/testum_gateway
       version: "1.0"
-    imagePullSecrets:
-      name: regcred
     isGateway: true
+
+postgres:
+  service:
+    port: 5432
+    image:
+      name: drstarland/testum_postgres
+      version: "1.0"
+
+    resources:
+      requests:
+        cpu: 200m
+        memory: 128Mi
+      limits:
+        cpu: 200m
+        memory: 256Mi
