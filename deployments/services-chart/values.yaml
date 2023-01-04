@@ -2,7 +2,7 @@ bonus:
   service:
     port: 8050
     image:
-      name: drstarland/bonus-service
+      name: drstarland/testum_bonus
       version: "1.0"
     imagePullSecrets:
       name: regcred
@@ -15,7 +15,7 @@ flight:
   service:
     port: 8060
     image:
-      name: drstarland/flight-service
+      name: drstarland/testum_flights
       version: "1.0"
     imagePullSecrets:
       name: regcred
@@ -28,7 +28,7 @@ ticket:
   service:
     port: 8070
     image:
-      name: drstarland/ticket-service
+      name: drstarland/testum_ticket
       version: "1.0"
     database: 
       name: tickets
@@ -39,7 +39,7 @@ gateway:
   service:
     port: 8080
     image:
-      name: drstarland/gateway-service
+      name: drstarland/testum_gateway
       version: "1.0"
     imagePullSecrets:
       name: regcred

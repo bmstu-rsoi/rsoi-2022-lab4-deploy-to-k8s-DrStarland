@@ -1,15 +1,12 @@
-FROM golang:1.19 AS build_stage
-WORKDIR /app
+FROM golang:1.19
+WORKDIR /pain/
 COPY . .
 RUN go mod tidy
-RUN go build -o app.x ./cmd/flights
+RUN CGO_ENABLED=0 go build -a -installsuffix cgo -o app ./cmd/flights
 
-# 2 шаг
-FROM alpine AS run_stage
-WORKDIR /app
-COPY --from=build_stage /app/app.x /app/app.x
-RUN chmod +x ./app.x
-
-EXPOSE 8060
-
-ENTRYPOINT ["./app.x"]
+FROM alpine:latest  
+RUN apk --no-cache add ca-certificates
+WORKDIR /root/
+COPY --from=0 /pain/app ./
+EXPOSE 8080
+CMD ["./app"]
