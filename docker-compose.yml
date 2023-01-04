@@ -18,6 +18,7 @@ services:
     build:
       context: src/tickets
       dockerfile: Dockerfile
+    image: drstarland/testum_tickets:1.0
     container_name: testum_tickets
     environment:
       PORT: ":8070"
@@ -30,6 +31,7 @@ services:
     build:
       context: src/flights
       dockerfile: Dockerfile
+    image: drstarland/testum_flights:1.0
     container_name: testum_flights
     environment:
       PORT: ":8060"
@@ -42,6 +44,7 @@ services:
     build:
       context: src/bonus
       dockerfile: Dockerfile
+    image: drstarland/testum_bonus:1.0
     container_name: testum_bonus
     environment:
       PORT: ":8050"
@@ -52,6 +55,7 @@ services:
     build:
       context: src/gateway
       dockerfile: Dockerfile
+    image: drstarland/testum_gateway:1.0
     container_name: testum_gateway
     environment:
       PORT: ":8080"
