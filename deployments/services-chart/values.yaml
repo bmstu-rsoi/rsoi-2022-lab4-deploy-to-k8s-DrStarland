@@ -4,6 +4,8 @@ bonus:
     image:
       name: drstarland/bonus-service
       version: "1.0"
+    imagePullSecrets:
+      name: regcred
     database:
       name: privileges
       username: program
@@ -15,6 +17,8 @@ flight:
     image:
       name: drstarland/flight-service
       version: "1.0"
+    imagePullSecrets:
+      name: regcred
     database: 
       name: flights
       username: program
@@ -37,6 +41,6 @@ gateway:
     image:
       name: drstarland/gateway-service
       version: "1.0"
-    # enviroments:
-    #  FlightsService__Host: "http://flight-service:8060"
+    imagePullSecrets:
+      name: regcred
     isGateway: true
