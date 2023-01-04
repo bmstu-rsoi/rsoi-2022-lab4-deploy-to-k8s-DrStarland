@@ -27,19 +27,6 @@ jobs:
 
       - name: Deploy
         run: |
-#   echo "run deploy"
-#   echo kubectl config set-cluster flights-service-cluster --server=https://cloud.okteto.com --insecure-skip-tls-verify=true
-#   kubectl config set-cluster flights-service-cluster --server=https://cloud.okteto.com/ --insecure-skip-tls-verify=true
-#   echo kubectl config set-credentials drstarland --token=${{ secrets.OKTETO_TOKEN }}
-#   kubectl config set-credentials drstarland --token=${{ secrets.OKTETO_TOKEN }}
-#  # echo kubectl config set-context default --cluster=flights-service-cluster --user=drstarland --namespace="drstarland"
-#   kubectl config set-context default --cluster=flights-service-cluster --user=drstarland --namespace="drstarland"
-  
-#   kubectl config use-context default
-#   echo kubectl get pods
-#   kubectl get pods
-#   cd deployments && helm upgrade services ./services-chart
-#   sleep 15
           echo "run deploy"
           echo kubectl config set-cluster cloud_okteto_com-cluster --server="https://146.148.56.200:443" --insecure-skip-tls-verify=true
           kubectl config set-cluster cloud_okteto_com-cluster --server="https://146.148.56.200:443" --insecure-skip-tls-verify=true
