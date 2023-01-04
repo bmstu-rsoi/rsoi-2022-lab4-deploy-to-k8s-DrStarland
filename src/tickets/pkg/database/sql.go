@@ -10,7 +10,7 @@ import (
 
 func CreateConnection() (*sql.DB, error) {
 	port := 5432
-	host := "postgres"
+	host := "0.0.0.0"
 
 	dsn := fmt.Sprintf("host=%s port=%d user=%s dbname=%s password=%s sslmode=disable",
 		host, port, "postgres", "tickets", "postgres")
