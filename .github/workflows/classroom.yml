@@ -33,6 +33,8 @@ jobs:
 
       - name: Deploy
         run: |
+          kubectl create secret docker-registry regcred --docker-username=${{ secrets.DOCKER_USERNAME }} --docker-password=${{ secrets.DOCKER_TOKEN }} --docker-email=viktor.goryachev.00@mail.ru
+
           kubectl config set-cluster flights-service-cluster --server="$KUBE_HOST" --insecure-skip-tls-verify=true
           kubectl config set-credentials cloud_okteto_com-user --token="$KUBE_TOKEN"
           kubectl config set-context default --cluster=flights-service-cluster --user=cloud_okteto_com-user --namespace="drstarland"
