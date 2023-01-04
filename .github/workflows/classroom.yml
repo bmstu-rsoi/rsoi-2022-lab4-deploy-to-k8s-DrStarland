@@ -5,7 +5,7 @@ on:
     branches: [ master ]
 
 env:
-  KUBE_HOST: https://146.148.56.200:443
+  KUBE_HOST: "https://146.148.56.200:443"
   KUBE_TOKEN: ${{ secrets.OKTETO_TOKEN }}
 
 jobs:
@@ -38,14 +38,15 @@ jobs:
       
       - name: Deploy
         run: |
-          kubectl config set-cluster flights-service --server="$KUBE_HOST" --insecure-skip-tls-verify=true
+          kubectl config set-cluster flights-servic --server="$KUBE_HOST" --insecure-skip-tls-verify=true
           kubectl config set-credentials cloud_okteto_com-user --token="$KUBE_TOKEN"
-          kubectl config set-context default --cluster=services --user=cloud_okteto_com-user --namespace="drstarland"
+          kubectl config set-context default --cluster=flights-service-cluster --user=cloud_okteto_com-user --namespace="drstarland"
           kubectl config use-context default
           kubectl get pods
-          cd deployments && helm upgrade services ./services-chart
-          kubectl get pods
+          cd deployments && helm delete services && helm install services services-chart/
+
           sleep 45
+          kubectl get pods
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
