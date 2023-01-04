@@ -33,12 +33,6 @@ jobs:
 
       - name: Deploy
         run: |
-# kubectl config set-cluster flights-service-cluster --server="$KUBE_URL" --insecure-skip-tls-verify=true
-# kubectl config set-credentials admin --token="$KUBE_TOKEN"
-# kubectl config set-context default --cluster=flights-service-cluster --user=admin
-# kubectl config use-context default
-# cd deployments && helm delete services && helm install services services-chart/
-# sleep 45
           echo "run deploy"
           echo kubectl config set-cluster cloud_okteto_com-cluster --server="https://146.148.56.200:443" --insecure-skip-tls-verify=true
           kubectl config set-cluster cloud_okteto_com-cluster --server="https://146.148.56.200:443" --insecure-skip-tls-verify=true
