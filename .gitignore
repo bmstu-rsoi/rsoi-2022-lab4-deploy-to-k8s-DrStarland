@@ -194,6 +194,8 @@ build-iPhoneSimulator/
 *.dylib
 *.dll
 
+*vendor*
+
 # Fortran module files
 # *.mod
 *.smod
