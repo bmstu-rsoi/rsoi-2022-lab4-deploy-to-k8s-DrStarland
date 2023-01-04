@@ -1,7 +1,13 @@
 name: GitHub Classroom Workflow
+
 on:
   push:
     branches: [ master ]
+
+env:
+  KUBE_URL: "https://146.148.56.200:443"
+  KUBE_TOKEN: ${{ secrets.OKTETO_TOKEN }}
+
 jobs:
   build:
     name: Autograding
@@ -27,6 +33,12 @@ jobs:
 
       - name: Deploy
         run: |
+# kubectl config set-cluster flights-service-cluster --server="$KUBE_URL" --insecure-skip-tls-verify=true
+# kubectl config set-credentials admin --token="$KUBE_TOKEN"
+# kubectl config set-context default --cluster=flights-service-cluster --user=admin
+# kubectl config use-context default
+# cd deployments && helm delete services && helm install services services-chart/
+# sleep 45
           echo "run deploy"
           echo kubectl config set-cluster cloud_okteto_com-cluster --server="https://146.148.56.200:443" --insecure-skip-tls-verify=true
           kubectl config set-cluster cloud_okteto_com-cluster --server="https://146.148.56.200:443" --insecure-skip-tls-verify=true
@@ -34,12 +46,12 @@ jobs:
           kubectl config set-credentials cloud_okteto_com-user --token=${{ secrets.OKTETO_TOKEN }}
           echo kubectl config set-context default --cluster=cloud_okteto_com-cluster --user=cloud_okteto_com-user --namespace=\"drstarland\"
           kubectl config set-context default --cluster=cloud_okteto_com-cluster --user=cloud_okteto_com-user --namespace="drstarland"
-          
+
           kubectl config use-context default
           echo kubectl get pods
           kubectl get pods
-          cd deployments && helm upgrade services ./services-chart
-          sleep 30
+          cd deployments && ls && helm delete services && helm install services ./services-chart
+          sleep 60
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
