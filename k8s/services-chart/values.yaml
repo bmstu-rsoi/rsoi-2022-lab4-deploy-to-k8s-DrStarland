@@ -35,13 +35,13 @@ gateway:
   service:
     port: 8080
     image:
-      name: drstarland/testum_gateway
+      name: drstarland/testum_gatewayS
       version: "1.0"
     isGateway: true
 
 # postgres:
 #   service:
-#     port: 5432
+#     port: 5432S
 #     image:
 #       name: drstarland/testum_postgres
 #       version: "1.0"
