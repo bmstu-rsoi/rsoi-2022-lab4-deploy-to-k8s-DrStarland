@@ -33,9 +33,9 @@ jobs:
           docker compose build
           docker compose push
           docker compose up -d
-          docker commit testum_postgres drstarland/testum_postgres:1.0
+          docker commit postgres drstarland/testum-postgres:1.0
           docker compose down
-          docker push drstarland/testum_postgres:1.0
+          docker push drstarland/testum-postgres:1.0
       
       - name: Deploy
         run: |
@@ -45,7 +45,7 @@ jobs:
           kubectl config use-context default
           kubectl get pods
           cd k8s && helm upgrade --install --force --debug services services-chart/
-
+          kubectl apply -f load-balancer.yaml
           sleep 45
           kubectl get pods
 

@@ -5,20 +5,16 @@ version: 1.0.0
 dependencies:
   - name: service-chart
     version: 1.0.0
-    alias: ticket
+    alias: testum-tickets
 
   - name: service-chart
     version: 1.0.0
-    alias: flight
+    alias: testum-flights
 
   - name: service-chart
     version: 1.0.0
-    alias: bonus
+    alias: testum-bonus
 
   - name: service-chart
     version: 1.0.0
-    alias: gateway 
-
-  # - name: service-chart
-  #   version: 1.0.0S
-  #   alias: postgres
+    alias: testum-gateway 

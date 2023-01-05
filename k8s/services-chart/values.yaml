@@ -1,55 +1,40 @@
-bonus:
+testum-bonus:
   service:
     port: 8050
     image:
-      name: drstarland/testum_bonus
+      name: drstarland/testum-bonus
       version: "1.0"
     database:
       name: privileges
       username: program
       password: test
 
-flight:
+testum-flights:
   service:
     port: 8060
     image:
-      name: drstarland/testum_flights
+      name: drstarland/testum-flights
       version: "1.0"
     database: 
       name: flights
       username: program
       password: test
 
-ticket:
+testum-tickets:
   service:
     port: 8070
     image:
-      name: drstarland/testum_tickets
+      name: drstarland/testum-tickets
       version: "1.0"
     database: 
       name: tickets
       username: program
       password: test
 
-gateway:
+testum-gateway:
   service:
     port: 8080
     image:
-      name: drstarland/testum_gatewayS
+      name: drstarland/testum-gateway
       version: "1.0"
     isGateway: true
-
-# postgres:
-#   service:
-#     port: 5432S
-#     image:
-#       name: drstarland/testum_postgres
-#       version: "1.0"
-
-#     resources:
-#       requests:
-#         cpu: 200m
-#         memory: 128Mi
-#       limits:
-#         cpu: 200m
-#         memory: 256Mi

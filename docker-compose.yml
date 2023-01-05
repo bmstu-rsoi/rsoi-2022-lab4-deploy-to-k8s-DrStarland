@@ -2,7 +2,7 @@ version: "3"
 services:
   postgres:
     image: drstarland/testum_postgres:1.0
-    container_name: testum_postgres
+    container_name: postgres
     restart: on-failure
     environment:
       POSTGRES_USER: postgres
@@ -18,8 +18,8 @@ services:
     build:
       context: src/tickets
       dockerfile: Dockerfile
-    image: drstarland/testum_tickets:1.0
-    container_name: testum_tickets
+    image: drstarland/testum-tickets:1.0
+    container_name: testum-tickets
     environment:
       PORT: "8070"
     ports:
@@ -31,8 +31,8 @@ services:
     build:
       context: src/flights
       dockerfile: Dockerfile
-    image: drstarland/testum_flights:1.0
-    container_name: testum_flights
+    image: drstarland/testum-flights:1.0
+    container_name: testum-flights
     environment:
       PORT: "8060"
     ports:
@@ -44,8 +44,8 @@ services:
     build:
       context: src/bonus
       dockerfile: Dockerfile
-    image: drstarland/testum_bonus:1.0
-    container_name: testum_bonus
+    image: drstarland/testum-bonus:1.0
+    container_name: testum-bonus
     environment:
       PORT: "8050"
     ports:
@@ -55,8 +55,8 @@ services:
     build:
       context: src/gateway
       dockerfile: Dockerfile
-    image: drstarland/testum_gateway:1.0
-    container_name: testum_gateway
+    image: drstarland/testum-gateway:1.0
+    container_name: testum-gateway
     environment:
       PORT: "8080"
     ports:

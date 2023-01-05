@@ -28,9 +28,9 @@ func main() {
 	router.PanicHandler = mid.PanicHandler
 
 	gs := &handlers.GatewayHandler{
-		TicketServiceAddress: "http://testum_tickets:8070",
-		FlightServiceAddress: "http://testum_flights:8060",
-		BonusServiceAddress:  "http://testum_bonus:8050",
+		TicketServiceAddress: "http://testum-tickets:8070",
+		FlightServiceAddress: "http://testum-flights:8060",
+		BonusServiceAddress:  "http://testum-bonus:8050",
 		Logger:               logger,
 	}
 
