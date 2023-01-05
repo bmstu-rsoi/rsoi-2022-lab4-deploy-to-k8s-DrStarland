@@ -39,17 +39,17 @@ gateway:
       version: "1.0"
     isGateway: true
 
-postgres:
-  service:
-    port: 5432
-    image:
-      name: drstarland/testum_postgres
-      version: "1.0"
+# postgres:
+#   service:
+#     port: 5432
+#     image:
+#       name: drstarland/testum_postgres
+#       version: "1.0"
 
-    resources:
-      requests:
-        cpu: 200m
-        memory: 128Mi
-      limits:
-        cpu: 200m
-        memory: 256Mi
+#     resources:
+#       requests:
+#         cpu: 200m
+#         memory: 128Mi
+#       limits:
+#         cpu: 200m
+#         memory: 256Mi

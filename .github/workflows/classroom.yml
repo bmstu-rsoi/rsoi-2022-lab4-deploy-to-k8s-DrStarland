@@ -44,7 +44,7 @@ jobs:
           kubectl config set-context default --cluster=flights-service-cluster --user=cloud_okteto_com-user --namespace="drstarland"
           kubectl config use-context default
           kubectl get pods
-          cd deployments && helm upgrade --install --debug services services-chart/
+          cd k8s && helm upgrade --install --debug services services-chart/
 
           sleep 45
           kubectl get pods
