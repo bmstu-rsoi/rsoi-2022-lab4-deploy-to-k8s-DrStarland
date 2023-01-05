@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 
 	"github.com/julienschmidt/httprouter"
 
@@ -46,7 +47,7 @@ func main() {
 	ServerAddress := os.Getenv("PORT")
 	if ServerAddress == "" || ServerAddress == ":80" {
 		ServerAddress = ":8080"
-	} else {
+	} else if !strings.HasPrefix(ServerAddress, ":") {
 		ServerAddress = ":" + ServerAddress
 	}
 

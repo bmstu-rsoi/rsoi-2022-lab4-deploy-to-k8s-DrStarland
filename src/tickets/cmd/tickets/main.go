@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 	"tickets/pkg/database"
 	"tickets/pkg/handlers"
 	"tickets/pkg/models/ticket"
@@ -54,9 +55,10 @@ func main() {
 	ServerAddress := os.Getenv("PORT")
 	if ServerAddress == "" || ServerAddress == ":80" {
 		ServerAddress = ":8080"
-	} else {
+	} else if !strings.HasPrefix(ServerAddress, ":") {
 		ServerAddress = ":" + ServerAddress
 	}
+
 	logger.Infow("starting server",
 		"type", "START",
 		"addr", ServerAddress,
