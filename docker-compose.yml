@@ -1,8 +1,8 @@
 version: "3"
 services:
   postgres:
-    image: library/postgres:13
-    container_name: postgres
+    image: drstarland/testum_postgres:1.0
+    container_name: testum_postgres
     restart: on-failure
     environment:
       POSTGRES_USER: postgres
@@ -34,7 +34,7 @@ services:
     image: drstarland/testum_flights:1.0
     container_name: testum_flights
     environment:
-      PORT: ":8060"
+      PORT: "8060"
     ports:
       - "8060:8060"
     depends_on:

@@ -33,7 +33,7 @@ jobs:
           docker compose build
           docker compose push
           docker compose up -d
-          docker commit postgres drstarland/testum_postgres:1.0
+          docker commit testum_postgres drstarland/testum_postgres:1.0
           docker compose down
           docker push drstarland/testum_postgres:1.0
       
